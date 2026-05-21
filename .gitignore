@@ -1,0 +1,21 @@
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# AI Tools (avoid accidentally sharing personal configs)
+.codebuddy/
+.cursor/
+.copilot/
+
+# Temp & backup
+*.tmp
+*.bak
+*.log
+
+# Generated reports (user-generated, not versioned)
+reports/report-*.md

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" font-family="Arial, sans-serif">
+  <defs>
+    <linearGradient id="g0" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#667eea"/><stop offset="100%" stop-color="#764ba2"/></linearGradient>
+    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f093fb"/><stop offset="100%" stop-color="#f5576c"/></linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4facfe"/><stop offset="100%" stop-color="#00f2fe"/></linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#43e97b"/><stop offset="100%" stop-color="#38f9d7"/></linearGradient>
+    <linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fa709a"/><stop offset="100%" stop-color="#fee140"/></linearGradient>
+    <linearGradient id="g5" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#a18cd1"/><stop offset="100%" stop-color="#fbc2eb"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="1" dy="2" stdDeviation="3" flood-opacity="0.15"/></filter>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#555"/></marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">Research Innovation Scout — 六步工作流</text>
+
+  <!-- User Input -->
+  <rect x="300" y="50" width="200" height="36" rx="18" fill="#eee" stroke="#999" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="400" y="73" text-anchor="middle" font-size="13" fill="#555">👤 用户输入研究方向</text>
+
+  <!-- Arrow from user to step 0 -->
+  <line x1="400" y1="86" x2="400" y2="105" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 0 -->
+  <rect x="120" y="108" width="220" height="50" rx="8" fill="url(#g0)" filter="url(#shadow)"/>
+  <text x="230" y="130" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">Step 0: 输入分类</text>
+  <text x="230" y="147" text-anchor="middle" font-size="10" fill="#ddd">A·具体问题 B·技术导向 C·宽泛领域</text>
+
+  <!-- Arrow 0 → 1 -->
+  <line x1="230" y1="158" x2="230" y2="180" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 1 -->
+  <rect x="120" y="183" width="220" height="50" rx="8" fill="url(#g1)" filter="url(#shadow)"/>
+  <text x="230" y="205" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">Step 1: 场景校验</text>
+  <text x="230" y="222" text-anchor="middle" font-size="10" fill="#ddd">综述·Benchmark·顶会 ｜ 无→终止</text>
+
+  <!-- Arrow 1 → 2 -->
+  <line x1="230" y1="233" x2="230" y2="255" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 2 -->
+  <rect x="120" y="258" width="220" height="50" rx="8" fill="url(#g2)" filter="url(#shadow)"/>
+  <text x="230" y="280" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">Step 2: 文献检索</text>
+  <text x="230" y="297" text-anchor="middle" font-size="10" fill="#333">种子文献 + 前后向扩展 + 硬标准筛选</text>
+
+  <!-- Arrow 2 → 3 -->
+  <line x1="230" y1="308" x2="230" y2="330" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 3 -->
+  <rect x="120" y="333" width="220" height="50" rx="8" fill="url(#g3)" filter="url(#shadow)"/>
+  <text x="230" y="355" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">Step 3: 四维拆解</text>
+  <text x="230" y="372" text-anchor="middle" font-size="10" fill="#333">问题·方法·贡献·未解决(Explicit/Inferred)</text>
+
+  <!-- Arrow 3 → 4 -->
+  <line x1="230" y1="383" x2="230" y2="405" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 4 -->
+  <rect x="120" y="408" width="220" height="50" rx="8" fill="url(#g4)" filter="url(#shadow)"/>
+  <text x="230" y="430" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">Step 4: 综合分析</text>
+  <text x="230" y="447" text-anchor="middle" font-size="10" fill="#333">开放问题池 · 方法图谱 · 四类方向</text>
+
+  <!-- Curved arrow from 4 to 5 on the right side -->
+  <path d="M340,433 Q500,433 500,340 Q500,250 460,250" fill="none" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="4,2"/>
+  <text x="510" y="380" font-size="10" fill="#888" transform="rotate(90,510,380)">整理输入</text>
+
+  <!-- Step 5 on the right side -->
+  <rect x="460" y="180" width="240" height="55" rx="10" fill="url(#g5)" filter="url(#shadow)"/>
+  <text x="580" y="202" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold">Step 5: 报告生成</text>
+  <text x="580" y="220" text-anchor="middle" font-size="10" fill="#333">📄 report-{场景}-{日期}.md</text>
+
+  <!-- Arrow from 5 to report file -->
+  <line x1="580" y1="235" x2="580" y2="260" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Report file icon -->
+  <rect x="480" y="263" width="200" height="40" rx="6" fill="#fff" stroke="#43e97b" stroke-width="2" filter="url(#shadow)"/>
+  <text x="580" y="288" text-anchor="middle" font-size="12" fill="#333">📄 决策支持报告</text>
+
+  <!-- Innovation directions legend on the right -->
+  <rect x="460" y="330" width="240" height="70" rx="6" fill="#f8f9fa" stroke="#ddd" stroke-width="1"/>
+  <text x="580" y="350" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">四类创新方向</text>
+  <text x="475" y="368" font-size="10" fill="#555">🔧 深化优化  🔄 技术迁移</text>
+  <text x="475" y="383" font-size="10" fill="#555">🗺️ 无人区探索  🔗 问题嫁接</text>
+
+  <!-- Pause indicators -->
+  <rect x="15" y="270" width="90" height="55" rx="6" fill="#fff" stroke="#f5576c" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="60" y="292" text-anchor="middle" font-size="9" fill="#f5576c" font-weight="bold">⏸ 暂停点</text>
+  <text x="60" y="306" text-anchor="middle" font-size="8" fill="#888">模糊输入</text>
+  <text x="60" y="318" text-anchor="middle" font-size="8" fill="#888">无证据 / 文献少</text>
+</svg>
