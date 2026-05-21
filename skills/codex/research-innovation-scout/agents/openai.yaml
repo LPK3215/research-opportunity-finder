@@ -1,0 +1,7 @@
+interface:
+  display_name: "Research Innovation Scout"
+  short_description: "Find literature-backed research directions"
+  default_prompt: "Use $research-innovation-scout to find literature-anchored innovation directions for contrastive learning in molecular property prediction."
+
+policy:
+  allow_implicit_invocation: true

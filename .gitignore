@@ -9,7 +9,9 @@ Thumbs.db
 
 # AI Tools (avoid accidentally sharing personal configs)
 .codebuddy/
-.cursor/
+.cursor/*
+!.cursor/rules/
+!.cursor/rules/*.mdc
 .copilot/
 
 # Temp & backup
@@ -18,4 +20,8 @@ Thumbs.db
 *.log
 
 # Generated reports (user-generated, not versioned)
-reports/report-*.md
+reports/generated/
+reports/*.tmp.md
+
+# Installer output
+/research-innovation-scout/

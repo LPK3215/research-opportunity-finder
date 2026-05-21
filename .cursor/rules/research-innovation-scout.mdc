@@ -1,0 +1,48 @@
+---
+description: Use for literature-backed research direction discovery, topic selection, research gap analysis, scene validation, paper mining, paper analysis, synthesis, and final decision reports.
+globs:
+alwaysApply: false
+---
+
+# Research Innovation Scout
+
+Use this rule when the user asks for innovation directions, research topics, literature-backed gaps, paper-grounded ideas, scene validation, or a research decision report.
+
+## Entry
+
+Read `skills/en/research-innovation-scout.md` first. It is the plain Markdown entry for Cursor. Load only the step file needed for the current stage unless the user asks for a full run.
+
+## Core Promise
+
+Ground every direction in verifiable scene or literature evidence. If evidence is missing, say so clearly. Do not invent papers, venues, datasets, benchmarks, metrics, citations, author claims, or limitations.
+
+## Workflow
+
+1. Step 0: classify the input and form a research question.
+2. Step 1: validate whether a real active research scene exists.
+3. Step 2: build a filtered paper pool.
+4. Step 3: analyze 4-6 key papers in four dimensions.
+5. Step 4: synthesize open problems, method map, and candidate directions.
+6. Step 5: write the final Markdown decision report.
+
+Use `skills/en/step-orchestrator.md` for multi-turn state, pause decisions, and handoff shape.
+
+## Pause Rules
+
+Pause for user choice when:
+
+- Step 0 returns a method-only or broad-domain input.
+- Step 1 finds no evidence, weak evidence, or multiple strong scenes.
+- Step 2 finds fewer than 5 relevant papers.
+- The user changes scope, domain, language, or constraints.
+
+Ask one concise question and show the options discovered so far.
+
+## Output Rules
+
+- Output one step at a time by default.
+- Keep the current step concise and decision-oriented.
+- Preserve a structured handoff block between steps.
+- Separate author-stated limitations from inferred gaps.
+- Label weak evidence as weak.
+- Write final reports to a new Markdown file named like `report-{scene}-{date}.md`.

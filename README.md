@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <img src="./docs/architecture.svg" alt="Architecture" width="700">
+  <img src="./docs/architecture.en.svg" alt="Architecture" width="700">
 </p>
 
 > 📖 [中文版 / Chinese](./README_zh-CN.md)
@@ -41,7 +41,7 @@ Every step is an independent, reusable AI prompt with anti-hallucination design 
 ### Option 1: One-Click Install (Recommended)
 
 ```bash
-git clone https://cnb.cool/lpk3215/research-opportunity-finder.git
+git clone https://github.com/LPK3215/research-opportunity-finder.git
 cd research-opportunity-finder
 ./scripts/install.sh          # Auto-detect your tools and install
 ```
@@ -50,20 +50,28 @@ cd research-opportunity-finder
 
 ```bash
 ./scripts/install.sh --tool claude-code   # Claude Code
-./scripts/install.sh --tool codebuddy     # CodeBuddy
+./scripts/install.sh --tool codex        # Codex / OpenAI Skill
 ./scripts/install.sh --tool cursor        # Cursor
+./scripts/install.sh --tool codebuddy     # CodeBuddy compatibility
 ./scripts/install.sh --tool copilot       # GitHub Copilot
 ./scripts/install.sh --tool aider         # Aider
 ./scripts/install.sh --tool windsurf       # Windsurf
 ./scripts/install.sh --tool general       # Plain Markdown
 ```
 
-### Option 3: Manual Use
-
-Send the contents of `skills/research-innovation-scout.md` to any AI that supports file reading and web search. Then input your research interest.
+Language-specific install:
 
 ```bash
-# Claude Code users: CLAUDE.md is auto-loaded after cloning
+./scripts/install.sh --lang en             # English prompt bundle
+./scripts/install.sh --lang zh-CN          # Chinese prompt bundle
+```
+
+### Option 3: Manual Use
+
+Send the contents of `skills/en/research-innovation-scout.md` to any AI that supports file reading and web search. Chinese users can use `skills/zh-CN/research-innovation-scout.md`. Then input your research interest.
+
+```bash
+# Claude Code users: the project skill is available after cloning
 claude
 # Just say: "Find innovation directions for contrastive learning in molecular property prediction"
 ```
@@ -72,14 +80,20 @@ claude
 
 ## 🔌 Multi-Tool Integrations
 
-Research Innovation Scout supports one-click install across multiple tools via `scripts/install.sh`:
+Research Innovation Scout is designed first for Claude Code, Codex/OpenAI Skills, and Cursor:
+
+| Primary Tool | Install Location | How to Use |
+|------|-----------------|------------|
+| **Claude Code** | `.claude/skills/research-innovation-scout/` | Ask naturally; Claude invokes the Skill when relevant |
+| **Codex / OpenAI Skill** | `$CODEX_HOME/skills/research-innovation-scout/` | Ask Codex to use `$research-innovation-scout` |
+| **Cursor** | `.cursor/rules/research-innovation-scout.mdc` | Use `@research-innovation-scout <direction>` |
+
+Compatibility targets are also available:
 
 | Tool | Install Location | How to Use |
 |------|-----------------|------------|
-| **Claude Code** | `~/.claude/CLAUDE.md` | Auto-loaded on `claude` launch |
 | **CodeBuddy** | `.codebuddy/skills/research-innovation-scout/` | Auto-detected as a Skill |
-| **Cursor** | `.cursor/rules/research-innovation-scout.mdc` | `@research-innovation-scout <direction>` |
-| **GitHub Copilot** | `.github/agents/research-innovation-scout.md` | Auto-effective in project |
+| **GitHub Copilot** | `.github/agents/research-innovation-scout.md` | Project prompt |
 | **Aider** | `CONVENTIONS.md` | Auto-read on `aider` launch |
 | **Windsurf** | `.windsurfrules` | Auto-loaded by Cascade |
 | **Plain Markdown** | `research-innovation-scout/` | Send to any AI |
@@ -101,7 +115,7 @@ Research Innovation Scout supports one-click install across multiple tools via `
 
 ## 🏗️ Six-Step Pipeline
 
-![Architecture](./docs/architecture.svg)
+![Architecture](./docs/architecture.en.svg)
 
 | Step | Name | What It Does | Pause Condition |
 |------|------|-------------|----------------|
@@ -127,9 +141,9 @@ Research Innovation Scout supports one-click install across multiple tools via `
 
 | Scenario | Input | Result | Report |
 |----------|------|--------|--------|
-| ❄️ Extreme Cold | Topological Quantum Chemistry × Molecular Taste | ⚪ Correctly terminated, no fabrication | [View](reports/report-cold-topological-taste.md) |
-| 🔥 Extreme Hot | LLM for Code Generation | 667→8 papers, 5 directions | [View](reports/report-hot-llm-code-gen.md) |
-| ⚖️ Normal | Contrastive Learning × Molecular Prediction | 14 papers, 6 directions | [View](reports/report-medium-cl-mol.md) |
+| ❄️ Extreme Cold | Topological Quantum Chemistry × Molecular Taste | ⚪ Correctly terminated, no fabrication | [View](reports/en/report-cold-topological-taste.md) |
+| 🔥 Extreme Hot | LLM for Code Generation | 667→8 papers, 5 directions | [View](reports/en/report-hot-llm-code-gen.md) |
+| ⚖️ Normal | Contrastive Learning × Molecular Prediction | 14 papers, 6 directions | [View](reports/en/report-medium-cl-mol.md) |
 
 ---
 
@@ -139,7 +153,7 @@ Research Innovation Scout supports one-click install across multiple tools via `
 - 📁 8 independent Skill files (any step usable standalone)
 - 🔬 4 innovation direction types
 - 🛡️ 4-layer anti-hallucination (scene / literature / analysis / direction)
-- 🌐 6+ tool platforms supported
+- 🌐 Claude, Codex, and Cursor as primary entrypoints, with compatibility packs for other tools
 - 📄 3 extreme scenario validations passed
 
 ---
@@ -150,24 +164,29 @@ Research Innovation Scout supports one-click install across multiple tools via `
 research-opportunity-finder/
 ├── README.md                           # This file
 ├── README_zh-CN.md                     # 中文版 / Chinese
-├── CLAUDE.md                           # Claude Code auto-load
-├── FRAMEWORK.md                        # Methodology design doc
+├── CLAUDE.md                           # Lightweight Claude project memory
+├── CLAUDE_zh-CN.md                     # Lightweight Chinese Claude memory
+├── .claude/
+│   └── skills/                         # Claude Code SKILL.md entrypoints
+├── .cursor/
+│   └── rules/                          # Cursor project rules (.mdc)
+├── FRAMEWORK_en.md                     # English methodology overview
+├── FRAMEWORK.md                        # Chinese methodology design doc
 ├── LICENSE                             # MIT
 ├── CHANGELOG.md / CONTRIBUTING.md / FAQ.md
+├── CHANGELOG_zh-CN.md / CONTRIBUTING_zh-CN.md / FAQ_zh-CN.md
 ├── scripts/
 │   └── install.sh                      # Multi-tool one-click installer
-├── skills/                             # AI Skill prompts (universal)
-│   ├── research-innovation-scout.md    # Entry point
-│   ├── step-0-input-classifier.md      # Input classification
-│   ├── step-1-scene-validator.md       # Scene validation
-│   ├── step-2-literature-miner.md      # Literature mining
-│   ├── step-3-paper-analyzer.md        # Four-dimension breakdown
-│   ├── step-4-cross-synthesizer.md     # Cross-paper synthesis
-│   ├── step-5-report-generator.md      # Report generation
-│   └── step-orchestrator.md            # Flow orchestrator
-├── .codebuddy/skills/                  # CodeBuddy official format
-├── docs/architecture.svg               # Pipeline diagram
-└── reports/                            # Test reports
+├── skills/                             # AI Skill prompts
+│   ├── en/                             # Plain Markdown English pack
+│   ├── zh-CN/                          # Plain Markdown Chinese pack
+│   └── codex/                          # Codex/OpenAI SKILL.md + references format
+├── docs/
+│   ├── architecture.en.svg             # English pipeline diagram
+│   └── architecture.zh-CN.svg          # Chinese pipeline diagram
+└── reports/
+    ├── en/                             # English test reports
+    └── zh-CN/                          # Chinese test reports
 ```
 
 ---
@@ -213,9 +232,9 @@ MIT License — use freely. See [LICENSE](LICENSE).
 
 | Field | Info |
 |-------|------|
-| Author | cnb.lpk |
-| Email | 4tdEacxA3Uip3zcDiU1QiA+cnb.lpk@noreply.cnb.cool |
-| Repo | https://cnb.cool/lpk3215/research-opportunity-finder |
+| Author | LPK3215 |
+| GitHub | https://github.com/LPK3215 |
+| Repo | https://github.com/LPK3215/research-opportunity-finder |
 
 ---
 

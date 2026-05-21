@@ -1,0 +1,7 @@
+interface:
+  display_name: "Research Innovation Scout 中文"
+  short_description: "发现有文献支撑的科研创新方向"
+  default_prompt: "Use $research-innovation-scout-zh-cn 帮我寻找对比学习在分子性质预测中的科研创新方向。"
+
+policy:
+  allow_implicit_invocation: true
